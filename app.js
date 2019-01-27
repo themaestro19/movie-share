@@ -48,3 +48,4 @@ app.use(commentRoutes);
 app.listen(3500, () => {
     console.log("MOVIE RATING!!!!!!");
 });
+
