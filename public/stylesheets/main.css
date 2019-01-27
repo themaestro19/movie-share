@@ -1,0 +1,33 @@
+.delete-form {
+    display: inline-block;
+}
+
+#head-form {
+    margin-top: 90px;
+}
+
+#head-movie {
+    margin-top: 70px;
+    
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 100px;
+}
+   
+footer {
+    position: absolute;
+    bottom:0px;
+    background-color: #343a40;
+    width:100%;
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:#ffffff;
+    margin-top: 20px;
+}

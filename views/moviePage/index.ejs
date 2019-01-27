@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+
+    <% if(currentUser && currentUser.isAdmin) { %>
+        <h1>You're an admin</h1>
+    <% } %>
+
+<div class="container">
+        <div id="head-movie">
+            <header class="jumbotron" style="background-color: rgb(60, 60, 60);">                   
+                <div class="container">         
+                    <h1 style="color: rgb(60, 179, 113);"><i class="fas fa-film"></i> Movie-Share Page</h1>
+                    <p style="color: rgb(60, 179, 113);">This page is about sharing opinion of movie</p>
+                    <p><a class="btn btn-primary btn-lg"href="/moviepage/new">Add new Movie!!</a></p>
+                </div>                  
+            </header>
+        </div>
+</div> 
+    <div class="row text-center flex-wrap" >
+        <% moviepage.forEach(function(movie){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <img src="<%= movie.image %>" width="100%" height="auto" class="card-img-top">
+                            <div class="caption">
+                                <h4><%= movie.name %></h4> 
+                            </div> 
+                            <p>
+                                <a href="/moviepage/<%= movie._id %>" class="btn btn-info">More Info</a>
+                            </p> 
+                        </div>
+                </div>         
+            </div>  
+        <% }); %>
+    </div>
+ 
+
+<% include ../partials/footer %>

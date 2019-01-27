@@ -1,0 +1,50 @@
+<% include ../partials/header %>
+
+<div class="container"> 
+        <div id="head-movie" >
+                <div class="card text-white bg-dark mb-3" >
+                        <h1 style="padding-left: 35px; padding-top: 10px;"><%= moviepage.name %></h1>
+                        <hr>
+                        <img  src="<%= moviepage.image %>" width="30%" height="auto" style="padding-left: 20px" >
+                        <p style="padding-top: 10px; padding-left: 20px"><%= moviepage.description %></p>   
+                        <p>
+                            <div class="text-right" style="padding-right: 5px;"><em>Submitted By <a href="/users/<%= moviepage.author.id %>"> <%= moviepage.author.username %></a></em></div>
+                        </p>
+                        <div style="padding-left: 20px; padding-bottom: 10px">
+                        <% if(currentUser && moviepage.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                            <a class="btn btn-success " href="/moviepage/<%= moviepage._id %>/comments/new" style="width: 170px;">Add new Comment</a>
+                            <a class="btn btn-warning" href="/moviepage/<%= moviepage._id %>/edit" style="width: 170px; color: white;" >Edit</a>
+                            <form class="delete-form" action="/moviepage/<%= moviepage._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger" style="width: 170px;" >Delete</button>
+                            </form>
+                        <% } %>
+                        </div>
+                </div> 
+                       
+            
+                 
+            <div style="padding-top: 15px; margin-top: 15px;" class="card card-body bg-light">
+           
+
+                <div class="text-right">
+                    <a class="btn btn-success" href="/moviepage/<%= moviepage._id %>/comments/new">Add New Comment</a>
+                  </div>
+
+            <% moviepage.comments.forEach(function(comment){ %>
+                <p>
+                    <strong><%= comment.author.username %></strong> - <%= comment.text %>
+                </p>
+                <div>
+                <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                <a href="/moviepage/<%= moviepage._id %>/comments/<%= comment._id %>/edit" class="btn btn-warning " style="width: 75px; color:white;">Edit</a>
+                <form class="delete-form" action="/moviepage/<%= moviepage._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                   <button class="btn btn-danger" style="width: 75px;">Delete</button>
+                </form>
+                <% } %>
+                 </div>
+            <% }) %>
+        </div>
+     </div>     
+</div>
+
+<% include ../partials/footer %>

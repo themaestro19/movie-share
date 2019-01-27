@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MovieRating</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    </head>
+    <body>
+            <nav class="navbar  navbar-expand-lg navbar-light bg-dark" id="navbar">
+                    <a class="navbar-brand" href="/moviepage" style="color: rgb(161, 255, 163);"><i class="fas fa-video"> Movie-Share</i></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <form class="form-inline my-2 my-lg-0" action="/moviepage" method="GET"> 
+                        <input class="form-control mr-sm-2" type="text" placeholder="Movie Search..." aria-label="Search" name="search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">Search</button>
+                    </form>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav ml-auto">
+                       <% if(!currentUser){ %>
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/login" style="color: rgb(161, 255, 163);">Login </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/register" style="color: rgb(161, 255, 163);">Register</a>
+                        </li>
+                     <% }else{ %>
+                        <li class="nav-item">
+                            <li style="color: rgb(161, 255, 163);"> <%= currentUser.username %></li>
+                            <a class="nav-link" href="/logout" style="color: rgb(161, 255, 163);">Logout</a>
+                          </li>
+                      <%  } %>
+                      </ul>
+                      
+                    </div>
+                  </nav>
+
+                 <% if(error && error.length > 0) { %>
+                    <div class="alert alert-danger" role="alert">
+                      <h1><%= error %></h1>
+                    </div>
+                  <% } %>
+                  <% if(success && success.length > 0) { %>
+                    <div class="alert alert-success" role="alert">
+                      <h1><%= success %></h1>
+                    </div>
+                  <% } %>
+                  
