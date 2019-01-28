@@ -16,7 +16,7 @@ var flash = require("connect-flash");
 var keys = require("./config/keys");
 
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, {useNewUrlParser: true});
 //mongoose.connect("mongodb://localhost:27017/movieDB", {useNewUrlParser: true}); //mongodb://admin:admin1234@ds113845.mlab.com:13845/moviedb
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");

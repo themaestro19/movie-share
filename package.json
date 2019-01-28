@@ -2,9 +2,8 @@
   "name": "movierating",
   "version": "1.0.0",
   "description": "movieRating",
-  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "keerati rounghirun",
   "license": "ISC",
