@@ -1,0 +1,8 @@
+{"_id":{"$oid":"5c3a14cc8f713d394428fe97"},"text":"This place is great, but I wish there was internet","author":"Homer","__v":0}
+{"_id":{"$oid":"5c3a14cd8f713d394428fe98"},"text":"This place is great, but I wish there was internet","author":"Homer","__v":0}
+{"_id":{"$oid":"5c3a14cd8f713d394428fe99"},"text":"This place is great, but I wish there was internet","author":"Homer","__v":0}
+{"_id":{"$oid":"5c3a158bd648852838ea2207"},"text":"Expectro Patronum","author":"Harry Potter","__v":0}
+{"_id":{"$oid":"5c3aea10d9e1223064b924a6"},"text":"dgfghdfhg","author":"14275353","__v":0}
+{"_id":{"$oid":"5c3aea1dd9e1223064b924a7"},"text":"asdasda","author":"4253453453","__v":0}
+{"_id":{"$oid":"5c3f39276ce0bb1b28228370"},"text":"TheMaestro","__v":0,"author":{"id":{"$oid":"5c3b2233f5f7a91ad0195ef8"},"username":"keerati"}}
+{"_id":{"$oid":"5c4c40c50aa2e83338c589c7"},"text":"TheMaestro","__v":0,"author":{"id":{"$oid":"5c3b2233f5f7a91ad0195ef8"},"username":"keerati"}}

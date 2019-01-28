@@ -13,8 +13,11 @@ var commentRoutes = require("./routes/comments");
 var movieRoutes = require("./routes/movieRatings");
 var indexRoutes = require("./routes/index");
 var flash = require("connect-flash");
+var keys = require("./config/keys");
 
-mongoose.connect("mongodb://localhost:27017/movieDB", {useNewUrlParser: true});
+
+mongoose.connect(keys.mongoURI);
+//mongoose.connect("mongodb://localhost:27017/movieDB", {useNewUrlParser: true}); //mongodb://admin:admin1234@ds113845.mlab.com:13845/moviedb
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
